@@ -129,7 +129,11 @@ clean:
 .PHONY: force_rebuild
 force_rebuild:
 	echo "Forcing Rebuild"
-	
+
+.PHONY: install
+	install -d $(DESTDIR)/bin/
+	install -m 755 coremark.exe $(DESTDIR)/bin/
+
 .PHONY: check
 check:
 	md5sum -c coremark.md5 
